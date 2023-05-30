@@ -1,11 +1,13 @@
 import { useState } from "react";
 
+// this component will create individual squares
 function Square({ value, onSquareClick }) {
     return (
         <button className="square" onClick={onSquareClick} >{value}</button>
     );
 }
 
+// this component will create all 9 squares in loop by calling Square component
 function CreateSquares({ squares, checkClick }) {
 
     const data = [];
@@ -26,6 +28,7 @@ function CreateSquares({ squares, checkClick }) {
     return data;
 }
 
+// this component will handle each move on board
 function Board({ xIsNext, squares, onPlay }) {
 
     let winner = calculateWinner(squares);
